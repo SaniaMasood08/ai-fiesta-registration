@@ -1,103 +1,69 @@
-import Image from "next/image";
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900 text-white text-center p-6">
+      <motion.h1
+        className="text-5xl font-bold mb-4 text-purple-400"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        🌟 AI FIESTA 2K25 🌟
+      </motion.h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <p className="text-lg max-w-xl mb-8">
+        Organized by the Department of Artificial Intelligence & Data Science  
+        Experience a fusion of fun, creativity, and technology!
+      </p>
+
+      {/* 🟣 Added Event Details Section */}
+      <div className="mt-4 text-left max-w-2xl bg-gray-900/60 p-6 rounded-2xl border border-purple-600 mb-8">
+        <h2 className="text-2xl font-bold text-purple-300 mb-2">Event Details</h2>
+        <p className="text-gray-300 mb-2"><b>Date:</b> 27/10/25</p>
+        <p className="text-gray-300 mb-2"><b>Time:</b> 9:15 AM – 3:10 PM</p>
+        <p className="text-gray-300 mb-2"><b>Venue:</b> Dasthagir Auditorium, MSAJCE</p>
+        <p className="text-gray-300 mb-4">
+          An inter-departmental technical fest showcasing innovation, creativity,
+          and AI-driven problem-solving challenges.
+        </p>
+        
+      </div>
+
+      {/* 🟣 Organizing Committee Section */}
+      <div className="bg-gray-800 bg-opacity-40 p-6 rounded-2xl shadow-lg mb-8 max-w-lg">
+        <h3 className="text-xl font-semibold text-purple-300 mb-2">
+          Organizing Committee
+        </h3>
+        <p className="text-sm"><b>Convener:</b> Dr. S. Regilan (HOD / AIDS)</p>
+        <p className="text-sm"><b>Co-Convener:</b> Prof. Vimalathithan (IIC President)</p>
+        <p className="text-sm"><b>Staff Co-ordinator:</b> D. Sudha (AP / AIDS)</p>
+        <p className="text-sm mt-2"><b>Student Co-ordinators:</b></p>
+        <ul className="text-sm list-disc list-inside text-gray-300">
+          <li>Asim Fayaz – 2nd Yr / AIDS</li>
+          <li>Sania Masood – 2nd Yr / AIDS</li>
+          <li>Mohamed Hashib H – 2nd Yr / AIDS</li>
+          <li>Mohamed Faisal – 2nd Yr / AIDS</li>
+          
+        </ul>
+      </div>
+
+      <div className="flex gap-4">
+        <Link
+          href="/register"
+          className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-2xl shadow-lg transition"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Register Now
+        </Link>
+
+        <Link
+          href="/admin"
+          className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-2xl shadow-lg transition"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Admin Login
+        </Link>
+      </div>
+    </main>
   );
 }
